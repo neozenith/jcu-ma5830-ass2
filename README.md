@@ -1,5 +1,7 @@
 # Python Data Vis
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ```
 brew install python3
 pip3 install -r requirements.txt

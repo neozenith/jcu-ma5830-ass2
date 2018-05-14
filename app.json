@@ -1,0 +1,5 @@
+{
+  "name": "jcu-ma5830-ass2",
+  "description": "Basic data visualisation using vega-lite deployable to heroku",
+  "addons": []
+}
