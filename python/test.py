@@ -4,11 +4,13 @@ import pandas as pd
 import scipy as sp
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('./data/MA5830-ASS2-Dataset.csv', index_col=[0,1])
+df = pd.read_csv('./data/MA5830-ASS2-Dataset.csv')
 
 print(df.describe())
-fig, axes = plt.subplots(nrows=2, ncols=1)
+student = df.pivot(index='subject', columns='student', values='mark')
+student.plot(kind='box')
+plt.show()
 
-df.plot(ax=axes[0], kind='box')
-df.plot(ax=axes[1], kind='kde')
+subject = df.pivot(index='student', columns='subject', values='mark')
+subject.plot(kind='box')
 plt.show()
