@@ -27,16 +27,21 @@ console.log(`${environment} v${pkg.version}`);
 
 if (environment === 'development') {
 	const webpack = require('webpack');
-	const webpackMiddleware = require('webpack-dev-middleware');
+	const webpackDevMiddleware = require('webpack-dev-middleware');
+	const webpackHotMiddleware = require('webpack-hot-middleware');
 	const webpackConfig = require('./webpack.config.js');
 	webpackConfig.mode = environment;
+	const compiler = webpack(webpackConfig);
 
 	app.use(
-		webpackMiddleware(webpack(webpackConfig), {
+		webpackDevMiddleware(compiler, {
+			noInfo: true,
 			publicPath: '/',
 			stats: { colors: true }
 		})
 	);
+
+	app.use(webpackHotMiddleware(compiler));
 } else {
 	app.use(express.static(staticPath));
 }

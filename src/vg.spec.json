@@ -1,0 +1,13 @@
+	{
+	"$schema": "https://vega.github.io/schema/vega-lite/v2.0.json",
+	"description": "A simple bar chart with embedded data.",
+	"data": { "url": "data/MA5830-ASS2-Dataset.csv" },
+	"width": 800,
+	"height": 600,
+	"mark": "point",
+	"encoding": {
+		"x": {"field": "subject", "type": "nominal" },
+		"y": { "field": "mark", "type": "quantitative" },
+		"color": { "field": "subject", "type": "nominal" }
+	}
+}
