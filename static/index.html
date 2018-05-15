@@ -30,6 +30,12 @@
 			}
 
 		vegaEmbed("#vis", vgSpec, {"renderer":"svg"});
+
+		// Poor man's Hot Module Reloading
+		function reload(){
+			location.reload();
+		}
+		setInterval(reload, 2000);
   </script>
 </body>
 </html>
